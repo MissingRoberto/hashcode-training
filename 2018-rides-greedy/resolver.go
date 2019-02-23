@@ -30,7 +30,7 @@ func Score(car Car, ride Ride, bonus int, t int) int {
 	}
 	score := dist
 
-	if ride.EarliestStart == t {
+	if ride.EarliestStart <= distFromCar+t {
 		score += bonus
 	}
 	return score
