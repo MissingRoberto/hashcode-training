@@ -73,3 +73,33 @@ It didn't affect previous result.
     * For each ride, sort vehiclues based on our greedy score.
 
 It timed out
+
+* Greedy:
+    * sort rides based on longest distance & "probability of bonus"
+    * For each ride, sort vehicles based on our greedy score
+
+```
+time go run main.go resolver.go files/*
+Score files/a_example.in: 12
+Score files/b_should_be_easy.in: 169677
+Score files/c_no_hurry.in: 16750973
+Score files/d_metropolis.in: 14166512
+Score files/e_high_bonus.in: 15738418
+Total Score: 46825592
+go run main.go resolver.go files/*  79.70s user 0.55s system 100% cpu 1:20.24 total
+```
+
+---
+After fixing a couple of issues:
+* Discard a ride if trip is not possible.
+
+```
+ime go run main.go resolver.go files/*
+Score files/a_example.in: 12
+Score files/b_should_be_easy.in: 169977
+Score files/c_no_hurry.in: 16750973
+Score files/d_metropolis.in: 14166858
+Score files/e_high_bonus.in: 16501528
+Total Score: 47589348
+go run main.go resolver.go files/*  83.19s user 0.62s system 100% cpu 1:23.70 total
+```
