@@ -84,9 +84,13 @@ func Resolve(problem Problem) int {
 			})
 
 			car := idleCars[len(idleCars)-1]
-			idleCars = idleCars[:len(idleCars)-1]
+			newScore := Score(car, ride, problem.Bonus, t)
+			if newScore == 0 {
+				continue
+			}
+			score += newScore
 
-			score += Score(car, ride, problem.Bonus, t)
+			idleCars = idleCars[:len(idleCars)-1]
 			dropTime := DropTime(car, ride, t)
 			if dropTime < problem.Steps {
 				arrivals[dropTime] = append(arrivals[dropTime], Car{Position: ride.To})
