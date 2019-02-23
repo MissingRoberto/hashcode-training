@@ -38,4 +38,38 @@ go run main.go resolver.go files/*  202.31s user 1.38s system 99% cpu 3:25.68 to
 ```
 
 * Greedy: 
+  * Sort rides based on longest distance
   * For each rides, sort vehicules based on our greedy score.
+```
+time go run main.go resolver.go files/*
+Score files/a_example.in: 12
+Score files/b_should_be_easy.in: 169677
+Score files/c_no_hurry.in: 16750973
+Score files/d_metropolis.in: 14166512
+Score files/e_high_bonus.in: 11588945
+Total Score: 42676119
+go run main.go resolver.go files/*  91.72s user 1.91s system 98% cpu 1:34.59 total
+```
+
+* Greedy: 
+  * Sort rides based on longest distance and possible bonus
+  * For each rides, sort vehicules based on our greedy score.
+
+```
+time go run main.go resolver.go files/*
+Score files/a_example.in: 12
+Score files/b_should_be_easy.in: 169677
+Score files/c_no_hurry.in: 16750973
+Score files/d_metropolis.in: 14166512
+Score files/e_high_bonus.in: 11588945
+Total Score: 42676119
+go run main.go resolver.go files/*  174.67s user 1.78s system 99% cpu 2:57.59 total
+```
+
+It didn't affect previous result.
+
+* Greedy: 
+    * sort rides based on longest distance and bonus if possible.
+    * For each ride, sort vehiclues based on our greedy score.
+
+It timed out
