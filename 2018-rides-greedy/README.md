@@ -94,7 +94,7 @@ After fixing a couple of issues:
 * Discard a ride if trip is not possible.
 
 ```
-ime go run main.go resolver.go files/*
+time go run main.go resolver.go files/*
 Score files/a_example.in: 12
 Score files/b_should_be_easy.in: 169977
 Score files/c_no_hurry.in: 16750973
